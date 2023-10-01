@@ -26,3 +26,4 @@ def test_data():
             "amount": "67314.70", "currency": {"name": "руб.", "code": "RUB"}}, "description": "Перевод организации",
          "from": "Visa Platinum 1246377376343588", "to": "Счет 14211924144426031657"}
     ]
+
