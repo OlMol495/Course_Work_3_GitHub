@@ -29,11 +29,34 @@ def sort_by_date(raw_data):
 
 def five_recent_trns(tr_list):
     """takes slice of five first items in list"""
-    return list[:5]
+    return five_trns[:5]
 
-def acc_from(tr_list):
+def acc_from_masking(tr_list):
     for i in tr_list:
-        if "Счет" in i["from"]
+        if "from" not in i.keys():
+            continue
+        else:
+            from_sep = i["from"].split()
+            num_list = []
+            word_list = []
+            for d in from_sep:
+                if d.isnumeric():
+                    num_list.append(d)
+                else:
+                    word_list.append(d)
+            if len(num_list[0]) == 16:
+                card_num = num_list[0]. replace(num_list[0][6:12], "******")
+                num_from = " ".join([card_num[:4], card_num[4:8], card_num[8:12], card_num[12:]])
+                print(num_from)
+            else:
+                num_from = num_list[0].replace(num_list[0][:-4], "**")
+                print(num_from)
+    return
+
+
+
+
+
 
 
 
