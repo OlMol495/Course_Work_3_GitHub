@@ -5,7 +5,7 @@ from datetime import datetime
 def load_data(op_f):
     """downloads json file"""
     if not os.path.exists(op_f):
-        return print("No data of transactions found")
+        return print("No data found")
     with open(op_f, 'r', encoding="utf-8") as f:
         full_data = json.load(f)
         return full_data

@@ -1,6 +1,7 @@
 from src import func
 
-json_path = "operations.json"
+json_path = "operatio.json"
+
 def main():
     transaction_list = func.load_data(json_path)
     exec_filtered = func.load_executed(transaction_list)
