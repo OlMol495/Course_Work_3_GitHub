@@ -69,9 +69,9 @@ def print_stats(filted_list):
         name_to = " ".join(to_word_list)
         amount = i["operationAmount"]["amount"]
         currency = i["operationAmount"]["currency"]["name"]
-        print(f"{date}, {description}\n"
+        print(f"{date} {description}\n"
               f"{name_from} {num_from} => {name_to} {num_to}\n"
-              f"{amount}, {currency}\n")
+              f"{amount} {currency}\n")
 
 
 
