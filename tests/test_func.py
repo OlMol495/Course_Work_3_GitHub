@@ -1,4 +1,3 @@
-import pytest
 from src import func
 
 def test_load_data():
