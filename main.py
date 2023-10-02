@@ -1,9 +1,8 @@
 from src import func
 
-json_path = "operations.json"
-
 
 def main():
+    json_path = "operations.json"
     transaction_list = func.load_data(json_path)
     exec_filtered = func.load_executed(transaction_list)
     date_sorted = func.sort_by_date(exec_filtered)

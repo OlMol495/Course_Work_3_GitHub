@@ -1,5 +1,5 @@
+import pytest
 from src import func
-
 
 def test_load_data():
     """checking that result is list type"""
@@ -11,7 +11,7 @@ def test_load_data():
 def test_load_data_nofile():
     """checking correct return with wrong file path"""
     file_path = "new_file.json"
-    assert func.load_data(file_path) == print("No data found")
+    assert func.load_data(file_path) == "No data found"
 
 
 def test_load_executed(test_data):
@@ -43,8 +43,17 @@ def test_print_stats_empty_list():
     data = []
     assert func.print_stats(data) == None
 
-def test_print_stats(test_data):
+def test_print_stats(test_data_2):
     """"""
-    data = []
-    assert func.print_stats(data) == None
+    data = func.print_stats(test_data_2)
+    assert data == f"26.08.2019 Перевод организации\n"
+                   f"Maestro 1596 83** **** 5199 => Счет **9589\n"
+                   f"31957.58 руб.\n\n"
+                   f"12.09.2018 Перевод организации\n
+                   f"Visa Platinum 1246 37** **** 3588 => Счет **1657\n"
+                   f"67314.70 руб."
+
+
+
+
 
