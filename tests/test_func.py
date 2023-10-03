@@ -40,17 +40,19 @@ def test_five_recent_trns(test_data):
 def test_print_stats_empty_list():
     """checking that with empty list input result will be None"""
     data = []
-    assert func.print_stats(data) == None
+    assert func.print_stats(data) == []
 
 def test_print_stats(test_data_2):
-    """"""
+    """checking that """
     data = func.print_stats(test_data_2)
-    assert data == f"26.08.2019 Перевод организации\n"
-                   f"Maestro 1596 83** **** 5199 => Счет **9589\n"
-                   f"31957.58 руб.\n\n"
-                   f"12.09.2018 Перевод организации\n
-                   f"Visa Platinum 1246 37** **** 3588 => Счет **1657\n"
-                   f"67314.70 руб."
+    assert data == ['26.08.2019 Перевод организации\nСчет **1657 => Счет **9589\n31957.58 руб.\n',
+ '11.07.2018 Открытие вклада\n  => Счет **6215\n79931.03 руб.\n',
+ '12.09.2018 Перевод организации\n'
+ 'Visa Platinum 1246 37** **** 3588 => Maestro 1596 83** **** 5199\n'
+ '67314.70 руб.\n']
+
+
+
 
 
 

@@ -32,6 +32,7 @@ def five_recent_trns(tr_list):
 def print_stats(filted_list):
     """print information for user about five recent transactions
     with date, type of transaction, from, to, amount and currency"""
+    print_stats = []
     for i in filted_list:
         date = datetime.strptime(i["date"], "%Y-%m-%dT%H:%M:%S.%f").strftime("%d.%m.%Y")
         description = i["description"]
@@ -69,9 +70,10 @@ def print_stats(filted_list):
         name_to = " ".join(to_word_list)
         amount = i["operationAmount"]["amount"]
         currency = i["operationAmount"]["currency"]["name"]
-        print(f"{date} {description}\n"
-              f"{name_from} {num_from} => {name_to} {num_to}\n"
-              f"{amount} {currency}\n")
+        print_stats.append(f"{date} {description}\n"
+                           f"{name_from} {num_from} => {name_to} {num_to}\n"
+                           f"{amount} {currency}\n")
+    return print_stats
 
 
 
