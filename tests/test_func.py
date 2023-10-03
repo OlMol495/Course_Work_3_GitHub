@@ -2,7 +2,7 @@ from src import func
 
 def test_load_data():
     """checking that result is list type"""
-    file_path = "..\operations.json"
+    file_path = "operations.json"
     data = func.load_data(file_path)
     assert isinstance(data, list)
 
@@ -10,7 +10,7 @@ def test_load_data():
 def test_load_data_nofile():
     """checking correct return with wrong file path"""
     file_path = "new_file.json"
-    assert func.load_data(file_path) == "No data found"
+    assert func.load_data(file_path) == None
 
 
 def test_load_executed(test_data):
